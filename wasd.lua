@@ -1,3 +1,12 @@
+if not pcall(function() gui.GetValue("misc_general") end) then
+local ind = http.Get("https://raw.githubusercontent.com/azeusaw/aimware/master/wasd.lua")
+local file = file.Open("wasd\\wasd.lua", "a")
+if file:Size() == 0 then
+file:Write(ind)
+end
+LoadScript("load\\wasd.lua")
+end
+
 -- local variables for API functions. any changes to the line below will be lost on re-generation
 local callbacks_Register, client_Command, client_SetConVar, draw_Color, draw_CreateFont, draw_GetScreenSize, draw_SetFont, draw_TextShadow, entities_GetLocalPlayer, gui_Checkbox, gui_Combobox, gui_Keybox, gui_Reference, gui_SetValue, gui_Slider, input_IsButtonPressed = callbacks.Register, client.Command, client.SetConVar, draw.Color, draw.CreateFont, draw.GetScreenSize, draw.SetFont, draw.TextShadow, entities.GetLocalPlayer, gui.Checkbox, gui.Combobox, gui.Keybox, gui.Reference, gui.SetValue, gui.Slider, input.IsButtonPressed
 
